@@ -13,7 +13,7 @@ class LanternFish:
         self.print_quantity()
 
     def get_school(self):
-        with open("input_test.txt", 'r') as input_file:
+        with open("input.txt", 'r') as input_file:
             self.init_school = list(map(int, list(csv.reader(input_file))[0]))
             self.lantern_fish = self.init_school.copy()
 
@@ -39,14 +39,6 @@ class LanternFish:
 
     def print_quantity(self):
         print(f"Lantern Fish: {len(self.lantern_fish)}")
-        fish_totals = {}
-        for fish in self.lantern_fish:
-            if str(fish) not in fish_totals.keys():
-                fish_totals[str(fish)] = 1
-            else:
-                fish_totals[str(fish)] += 1
-
-        print(fish_totals)
 
 
 school = LanternFish(18)
